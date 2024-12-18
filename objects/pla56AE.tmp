@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://d20unmxyabe36"]
+
+[ext_resource type="Script" path="res://scripts/objects/player.gd" id="1_ondkk"]
+[ext_resource type="Script" path="res://scripts/objects/player/player_camera.gd" id="2_xq0yl"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_jryil"]
+
+[node name="player" type="Node3D"]
+script = ExtResource("1_ondkk")
+
+[node name="player_mesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_jryil")
+
+[node name="camera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.973179, 0.23005, 0, -0.23005, 0.973179, 0, 2.00508, 4.15186)
+script = ExtResource("2_xq0yl")

@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwfhib3b8u73w"]
+
+[ext_resource type="PackedScene" uid="uid://d20unmxyabe36" path="res://objects/player.tscn" id="1_pgrrm"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ligtp"]
+
+[node name="test_level" type="Node3D"]
+
+[node name="ground" type="MeshInstance3D" parent="."]
+transform = Transform3D(10.4, 0, 0, 0, 1, 0, 0, 0, 10.4, 0, 0, 0)
+mesh = SubResource("PlaneMesh_ligtp")
+
+[node name="player" parent="." instance=ExtResource("1_pgrrm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+speed = 20
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.832215, 0.554452, 0, -0.554452, 0.832215, 0, 5.70936, 6.34654)
