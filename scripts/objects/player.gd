@@ -33,5 +33,5 @@ func _process(delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey and (event as InputEventKey).is_action_pressed("quit"):
-		self.get_tree().quit()
+		self.get_tree().quit() # Exit
 		
