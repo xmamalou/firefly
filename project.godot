@@ -10,8 +10,10 @@ config_version=5
 
 [application]
 
-config/name="Platformer"
+config/name="firefly"
+config/description="A small platformer project"
 config/features=PackedStringArray("4.3", "Forward Plus")
+boot_splash/show_image=false
 config/icon="res://icon.svg"
 
 [debug]
@@ -38,6 +40,11 @@ gdscript/warnings/narrowing_conversion=2
 gdscript/warnings/int_as_enum_without_cast=2
 gdscript/warnings/int_as_enum_without_match=2
 gdscript/warnings/enum_variable_without_default=2
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 
 [importer_defaults]
 
@@ -102,6 +109,11 @@ turn_down={
 "events": [Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":3,"axis_value":1.0,"script":null)
 ]
 }
+
+[physics]
+
+2d/run_on_separate_thread=true
+3d/run_on_separate_thread=true
 
 [rendering]
 
