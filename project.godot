@@ -16,6 +16,10 @@ config/features=PackedStringArray("4.3", "Forward Plus")
 boot_splash/show_image=false
 config/icon="res://icon.svg"
 
+[autoload]
+
+GameOptions="*res://globals/game_options.gd"
+
 [debug]
 
 gdscript/warnings/unassigned_variable=2
@@ -45,6 +49,11 @@ gdscript/warnings/enum_variable_without_default=2
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+
+[global_group]
+
+ground="Specifies the collision object is a ground"
+kill="Instantly kills player if collided with"
 
 [importer_defaults]
 
@@ -109,6 +118,10 @@ turn_down={
 "events": [Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":3,"axis_value":1.0,"script":null)
 ]
 }
+
+[internationalization]
+
+locale/translations=PackedStringArray("res://localization/strings.el.translation", "res://localization/strings.en.translation")
 
 [physics]
 
