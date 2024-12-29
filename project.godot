@@ -54,6 +54,7 @@ window/size/viewport_height=1080
 
 ground="Specifies the collision object is a ground"
 kill="Instantly kills player if collided with"
+enemy=""
 
 [importer_defaults]
 
@@ -127,6 +128,12 @@ toggle_panel={
 [internationalization]
 
 locale/translations=PackedStringArray("res://localization/strings.el.translation", "res://localization/strings.en.translation")
+
+[layer_names]
+
+3d_physics/layer_1="wall"
+3d_physics/layer_2="enemy"
+3d_physics/layer_3="player"
 
 [physics]
 

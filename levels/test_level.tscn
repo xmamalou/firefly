@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cwfhib3b8u73w"]
+[gd_scene load_steps=6 format=3 uid="uid://cwfhib3b8u73w"]
 
 [ext_resource type="PackedScene" uid="uid://d20unmxyabe36" path="res://objects/player.tscn" id="1_pgrrm"]
 [ext_resource type="PackedScene" uid="uid://dsl2t05a20ryb" path="res://objects/placeholder_ground.tscn" id="2_v02on"]
+[ext_resource type="PackedScene" uid="uid://diltk03pcd06o" path="res://objects/enemy.tscn" id="3_06pjo"]
+[ext_resource type="Resource" uid="uid://b2capju00aybp" path="res://resources/placeholder_ground_settings.tres" id="3_j0qbm"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_x0u1b"]
 
@@ -17,12 +19,15 @@ transform = Transform3D(1, 0, 0, 0, 0.0500699, 0.998746, 0, -0.998746, 0.0500699
 
 [node name="ground" parent="." instance=ExtResource("2_v02on")]
 transform = Transform3D(1, 6.98132e-05, 0, -6.98132e-05, 1, 0, 0, 0, 1, -0.0599544, 0, 1.77768)
+ground_settings = ExtResource("3_j0qbm")
 
 [node name="ground3" parent="." instance=ExtResource("2_v02on")]
 transform = Transform3D(0.972108, -0.234531, 0, 0.234531, 0.972108, 0, 0, 0, 1, 13.1473, 1.57115, 1.86759)
+ground_settings = ExtResource("3_j0qbm")
 
 [node name="ground2" parent="." instance=ExtResource("2_v02on")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -13.3929, 7.71667)
+ground_settings = ExtResource("3_j0qbm")
 
 [node name="kill_plane" type="StaticBody3D" parent="." groups=["kill"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -20.7299, 0)
@@ -33,3 +38,7 @@ shape = SubResource("WorldBoundaryShape3D_x0u1b")
 
 [node name="spawn_point" type="Node3D" parent="."]
 transform = Transform3D(0.99994, -0.0109255, 0, 0.0109255, 0.99994, 0, 0, 0, 1, 0, 4.81825, 0)
+
+[node name="enemy" parent="." instance=ExtResource("3_06pjo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.54647, 3.63305, -0.0448617)
+ground_speed = 1.0
