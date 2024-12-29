@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="BasicEnemyStats" load_steps=2 format=3 uid="uid://418xfuwe8owy"]
+
+[ext_resource type="Script" path="res://resource_defs/basic_enemy_stats.gd" id="1_fltm7"]
+
+[resource]
+script = ExtResource("1_fltm7")
+move_decision_wait = 1.0

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="GroundSettings" load_steps=2 format=3 uid="uid://b2capju00aybp"]
+
+[ext_resource type="Script" path="res://resource_defs/ground_settings.gd" id="1_vx26r"]
+
+[resource]
+script = ExtResource("1_vx26r")
+bounce = 1
+dissipation = 90.0
