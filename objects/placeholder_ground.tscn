@@ -1,4 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dsl2t05a20ryb"]
+[gd_scene load_steps=5 format=3 uid="uid://dsl2t05a20ryb"]
+
+[ext_resource type="Script" path="res://scripts/objects/placeholder_ground.gd" id="1_7r6xh"]
+[ext_resource type="Script" path="res://scripts/objects/ground_body.gd" id="1_imc20"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_w1yul"]
 
@@ -6,6 +9,7 @@
 size = Vector3(13.3911, 0.124237, 13.381)
 
 [node name="placeholder_ground" type="Node3D"]
+script = ExtResource("1_7r6xh")
 
 [node name="mesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(6.7, 0, 0, 0, 1, 0, 0, 0, 6.7, 0, 0, 0)
@@ -13,6 +17,10 @@ mesh = SubResource("PlaneMesh_w1yul")
 
 [node name="body" type="StaticBody3D" parent="." groups=["ground"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0294902, 0)
+collision_mask = 0
+script = ExtResource("1_imc20")
+bounce = 1
+dissipation = 50.0
 
 [node name="col_shape" type="CollisionShape3D" parent="body"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00805664, -0.0459378, 0.00405121)
