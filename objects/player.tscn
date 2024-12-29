@@ -14,6 +14,8 @@ material = SubResource("StandardMaterial3D_a6dv0")
 
 [node name="player" type="CharacterBody3D"]
 editor_description = "A node representing a character that can move around, jump and collide with things"
+collision_layer = 4
+collision_mask = 3
 script = ExtResource("1_ondkk")
 
 [node name="center" type="Node3D" parent="."]
@@ -29,7 +31,7 @@ mesh = SubResource("CapsuleMesh_jryil")
 [node name="col_shape" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_uaffo")
 
-[node name="debug_panel" type="Control" parent="." node_paths=PackedStringArray("player")]
+[node name="debug_panel" type="Control" parent="."]
 editor_description = "A debug panel for checking various properties"
 visible = false
 layout_mode = 3
@@ -37,7 +39,6 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("3_gaeif")
-player = NodePath("..")
 tolerance = 0.0005
 
 [node name="speed_label" type="Label" parent="debug_panel"]
@@ -46,3 +47,11 @@ offset_right = 40.0
 offset_bottom = 23.0
 text = "SPEED_LABEL"
 label_settings = ExtResource("3_rrd31")
+
+[node name="ui" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[connection signal="speed_changed" from="." to="debug_panel" method="_on_player_speed_changed"]
