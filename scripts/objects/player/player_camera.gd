@@ -17,12 +17,15 @@ extends Camera3D
 
 signal camera_displaced(pos: Vector3)
 
-@export var is_inverted: bool = false ## If set to true, camera is inverted
-@export_range(1, 100, 1, "suffix:%")
-var sensitivity: float = 5 : ## How sensitive the camera is to mouse movements
+#region Exports
+## If set to true, camera is inverted
+@export var is_inverted: bool = false 
+## How sensitive the camera is to mouse movements
+@export_range(1, 100, 1, "suffix:%") var sensitivity: float = 5 : 
 	get: return sensitivity/1000
 	set(value): # sensitivity is expressed as a whole percentage (1 to 100, no decimals)
 		sensitivity = max(1, abs(ceil(value))) # if value == 0, then 1 is chosen instead
+#endregion
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
