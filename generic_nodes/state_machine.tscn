@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bne1p1fux0fwd"]
+
+[ext_resource type="Script" path="res://scripts/state_machines/basic_fsm.gd" id="1_ufrb3"]
+
+[node name="state_machine" type="Node"]
+script = ExtResource("1_ufrb3")
